@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil Pondok - Pondok Pesantren Mansya'ul Huda</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Styles adapted from other pages for consistency */
+        .page-header {
+            background: linear-gradient(rgba(23, 66, 51, 0.7), rgba(52, 152, 219, 0.7)), url('Banner/Banner.jpg'); /* Using a generic banner */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-meta {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .main-content {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .article-content h1 {
+            color: var(--primary-green);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-green);
+            color: var(--dark-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .back-button:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        .profile-details {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        .profile-details li {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            align-items: center;
+        }
+        .profile-details li:last-child {
+            border-bottom: none;
+        }
+        .detail-label {
+            flex: 0 0 250px;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+        .detail-value {
+            flex: 1;
+            color: var(--dark-gray);
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .detail-label {
+                flex: 0 0 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .map-container h2 {
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .map-container iframe {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo-pondok.png" alt="Logo Mansya'ul Huda" class="logo-img">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <div class="nav-link dropdown">
+                    <span>Profil <i class="fas fa-caret-down"></i></span>
+                    <div class="dropdown-content">
+                        <a href="sejarah.html">Sejarah Berdirinya</a>
+                        <a href="profilpengasuh.html">Profil Pengasuh</a>
+                        <a href="profilpondok.html">Profil Pondok</a>
+                    </div>
+                </div>
+                <div class="nav-link dropdown">
+                    <span>Pendidikan <i class="fas fa-caret-down"></i></span>
+                    <div class="dropdown-content">
+                        <a href="mts-alawiyah.html">MTS SA-Alawiyah</a>
+                        <a href="smk-alawiyah.html">SMK Alawiyah</a>
+                    </div>
+                </div>
+                <a href="index.html#fasilitas" class="nav-link">Fasilitas</a>
+                <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                <a href="index.html#kontak" class="nav-link">Kontak</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-container">
+            <h1 class="page-title">Profil Pondok</h1>
+            <div class="page-meta">
+                <i class="fas fa-info-circle"></i> Informasi Umum dan Legalitas
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+            
+            <article class="article-content">
+                <h1>Profil Pondok Pesantren Mansya'ul Huda</h1>
+                <ul class="profile-details">
+                    <li><span class="detail-label">Nama Pondok</span><span class="detail-value">Pondok Pesantren Mansya’ul Huda</span></li>
+                    <li><span class="detail-label">Alamat</span><span class="detail-value">Dusun Krajan, Desa Paspan, Kec. Glagah, Kab. Banyuwangi, Jawa Timur<br>Telepon: 0333 – 415095<br>E-mail: mansyaulhuda.bwi99@gmail.com</span></li>
+                    <li><span class="detail-label">Mulai Berdiri</span><span class="detail-value">1 Januari 1969</span></li>
+                    <li><span class="detail-label">Nama Pendiri</span><span class="detail-value">KH. Mahmud Ali</span></li>
+                    <li><span class="detail-label">Akte Notaris</span><span class="detail-value">Heru Ismadi SH. / No. 2 / 16 November 2005</span></li>
+                    <li><span class="detail-label">Nomor Statistik</span><span class="detail-value">512.35.10.16128</span></li>
+                    <li><span class="detail-label">Nomor Piagam</span><span class="detail-value">WM.06.05/PP.00.7/92/1995</span></li>
+                    <li><span class="detail-label">Nama Yayasan</span><span class="detail-value">Perkumpulan Pondok Pesantren Mansya’ul Huda</span></li>
+                    <li><span class="detail-label">Alamat Yayasan</span><span class="detail-value">Jl. Kawah Ijen Paspan, Glagah, Banyuwangi 68454, Jawa Timur</span></li>
+                    <li><span class="detail-label">Pimpinan Yayasan</span><span class="detail-value">KH. Marfu’ Ali</span></li>
+                </ul>
+
+                <div class="map-container">
+                    <h2>Lokasi Kami di Peta</h2>
+                    <iframe src="https://maps.app.goo.gl/rBLcXVvdoPsN5D1p8" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pondok Pesantren Mansya'ul Huda</h3>
+                    <p>Lembaga pendidikan Islam yang berkomitmen membentuk generasi Qur'ani berakhlak mulia.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/mansyaul.huda.94" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mansyaulhuda.bwi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@ponpesmansyaulhuda3403?si=egzBQJXMfgBDNDTN" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/6285216991185" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Kawah Ijen Paspan Glagah Banyuwangi 68454</p>
+                        <p><i class="fas fa-phone"></i> 0852 1699 1185</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:mansyaulhuda.bwi99@gmail.com">mansyaulhuda.bwi99@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#profil">Profil Pondok</a></li>
+                        <li><a href="index.html#pendidikan">Program Pendidikan</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                        <li><a href="index.html#fasilitas">Fasilitas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pondok Pesantren Mansya'ul Huda. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

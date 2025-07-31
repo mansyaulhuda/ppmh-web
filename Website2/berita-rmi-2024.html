@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <title>Tuan Rumah Musabaqoh RMI 2024 - Pondok Pesantren Mansya'ul Huda</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Additional styles for announcement page */
+        .announcement-header {
+            /* Ganti dengan path gambar yang relevan dengan berita */
+            background: linear-gradient(rgba(23, 66, 51, 0.7), rgba(52, 152, 219, 0.7)), url('Agenda Acara/persiapan-rmi-26juli.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .announcement-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .announcement-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .announcement-meta {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .announcement-content {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px var(--shadow);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .article-content h1 {
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: var(--dark-gray);
+        }
+
+        .article-content p:first-of-type {
+            font-weight: 500;
+            color: var(--dark-blue);
+        }
+
+        .article-location {
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .quote-highlight {
+            background: var(--cream);
+            border-left: 4px solid var(--primary-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            position: relative;
+        }
+
+        .quote-highlight::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-green);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .article-image-container {
+            margin: 2.5rem 0;
+            text-align: center;
+        }
+
+        .article-image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .article-image-container figcaption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-style: italic;
+        }
+
+        .share-buttons {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .share-btn {
+            display: inline-block;
+            margin-left: 10px;
+            color: var(--dark-gray);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: scale(1.15);
+        }
+
+        .share-btn.whatsapp:hover {
+            color: #25D366;
+        }
+
+        .share-btn.facebook:hover {
+            color: #1877F2;
+        }
+
+        .share-btn.twitter:hover {
+            color: #1DA1F2; /* Twitter Blue */
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-green);
+            color: var(--dark-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .back-button:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        .related-news {
+            background: var(--light-gray);
+            padding: 4rem 0;
+        }
+
+        .related-news h3 {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .news-card-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--light-green), var(--light-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .news-card-image i {
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .news-card-content {
+            padding: 1.5rem;
+        }
+
+        .news-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .news-card p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .news-date {
+            color: var(--dark-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .announcement-title {
+                font-size: 1.8rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo-pondok.png" alt="Logo Mansya'ul Huda" class="logo-img">
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+    <a href="index.html" class="nav-link">Beranda</a>
+    <div class="nav-link dropdown">
+        <span>Profil <i class="fas fa-caret-down"></i></span>
+        <div class="dropdown-content">
+            <a href="sejarah.html">Sejarah Berdirinya</a>
+            <a href="profilpengasuh.html">Profil Pengasuh</a>
+            <a href="profilpondok.html">Profil Pondok</a>
+        </div>
+    </div>
+    <div class="nav-link dropdown">
+        <span>Pendidikan <i class="fas fa-caret-down"></i></span>
+        <div class="dropdown-content">
+            <a href="mts-alawiyah.html">MTS SA-Alawiyah</a>
+            <a href="smk-alawiyah.html">SMK Alawiyah</a>
+        </div>
+    </div>
+    <a href="index.html#fasilitas" class="nav-link">Fasilitas</a>
+    <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+    <a href="index.html#kontak" class="nav-link">Kontak</a>
+</div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Announcement Header -->
+    <section class="announcement-header">
+        <div class="announcement-container">
+            <h1 class="announcement-title">BERITA ACARA</h1>
+            <div class="announcement-meta">
+                <i class="fas fa-calendar-alt"></i> Berita & Pengumuman Terkini
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="announcement-content">
+        <div class="announcement-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+            
+            <div class="article-content">
+                <div class="share-buttons">
+                    <a href="#" class="share-btn whatsapp" target="_blank" title="Bagikan ke WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="share-btn facebook" target="_blank" title="Bagikan ke Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="share-btn twitter" target="_blank" title="Bagikan ke Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+
+                <h1>Jadi Tuan Rumah Musabaqoh RMI NU Banyuwangi 2024, PP Mansya'ul Huda Tekankan Pentingnya Ukhuwah dan Kompetisi Sehat</h1>
+                
+                <p><span class="article-location">MANSYA’UL HUDA</span> – Suasana penuh semangat dan kebersamaan menyelimuti kompleks Pondok Pesantren (PP) Mansya'ul Huda di Desa Paspan, Kecamatan Glagah, Banyuwangi. Selama tiga hari, mulai Jumat (12/1) hingga Minggu (14/1/2024), pesantren ini sukses menjadi tuan rumah perhelatan akbar Musabaqoh ke-17 Rabithah Ma'ahid Islamiyah Nahdlatul Ulama (RMI NU) tingkat Kabupaten Banyuwangi. Acara yang diikuti oleh sekitar 3.500 santri dari 98 pondok pesantren di seluruh Banyuwangi ini dibuka secara resmi oleh Sekretaris PCNU Banyuwangi, Syaifudin Zuhri, dan dihadiri oleh puluhan tokoh ulama, pejabat, serta masyarakat.</p>
+
+                <p>Selaku tuan rumah, Pengasuh Pondok Pesantren Mansya'ul Huda menyampaikan rasa bangga dan syukurnya atas kepercayaan yang diberikan untuk menyelenggarakan acara penting bagi para santri ini. Dalam sambutannya, beliau menekankan bahwa Musabaqoh bukan sekadar ajang untuk berkompetisi, tetapi yang lebih utama adalah sebagai sarana untuk mempererat tali silaturahmi dan ukhuwah islamiyah antar pondok pesantren di Banyuwangi.</p>
+
+                <div class="quote-highlight">
+                    <p>"Merupakan suatu kehormatan bagi kami untuk menjadi tuan rumah bagi para calon pemimpin masa depan. Mari jadikan ajang ini sebagai tempat untuk fastabiqul khairat (berlomba-lomba dalam kebaikan), menunjukkan kemampuan terbaik, sambil tetap menjaga adab dan persaudaraan sesama santri," pesan Pengasuh PP Mansya'ul Huda.</p>
+                </div>
+
+                <figure class="article-image-container">
+                    <img src="berita acara/pembukaan rmi.webp" alt="Pembukaan Musabaqoh RMI NU 2024">
+                    <figcaption>Suasana pembukaan Musabaqoh RMI NU ke-17 di PP Mansya'ul Huda.</figcaption>
+                </figure>
+
+                <p>Partisipasi aktif sang pengasuh dalam seremoni pembukaan, yang ditandai dengan pemukulan rebana bersama jajaran PCNU dan tokoh lainnya, menjadi simbol keramahtamahan dan dukungan penuh dari PP Mansya'ul Huda untuk kesuksesan acara. Beliau berharap, kegiatan ini dapat memotivasi para santri untuk lebih giat belajar dan kelak dapat memberikan kontribusi nyata bagi masyarakat, bangsa, dan agama.</p>
+
+                <p>Sekretaris RMI NU Banyuwangi, Moh. Shofiyullah, menambahkan bahwa acara ini dirancang tidak hanya untuk kompetisi, tetapi juga sebagai platform untuk mengasah kreativitas dan mental para santri. Berbagai cabang lomba dipertandingkan, mulai dari lomba baca kitab kuning, pidato dalam tiga bahasa (Arab, Inggris, Indonesia), kaligrafi, cerdas cermat, hingga festival hadrah al-habsyi.</p>
+
+                <p>"Musabaqoh ini sekaligus menjadi ajang silaturahmi antara santri dari ponpes se-Banyuwangi. Kami berharap para santri dapat termotivasi untuk terus belajar dan berprestasi," ujar Shofiyullah. Dengan berakhirnya acara, PP Mansya'ul Huda telah berhasil menorehkan catatan positif sebagai tuan rumah yang baik, memastikan seluruh rangkaian kegiatan berjalan lancar dan meninggalkan kesan mendalam bagi seluruh peserta.</p>
+
+                <figure class="article-image-container">
+                    <img src="Galeri santri/Rmi-tahun-kemaren.jpg" alt="Penutupan Musabaqoh RMI NU 2024">
+                    <figcaption>Momen penutupan dan penyerahan piala kepada para juara Musabaqoh RMI NU 2024.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related News -->
+    <section class="related-news">
+        <div class="announcement-container">
+            <h3>Berita Terkait Lainnya</h3>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-card-image">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-date">26 Juli 2025</div>
+                        <h4>Rapat Perdana Persiapan RMI 2025</h4>
+                        <p>PP Mansya'ul Huda mulai mantapkan persiapan untuk kembali menyukseskan perhelatan akbar RMI NU pada Desember 2025...</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-card-image">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-date">18 November 2024</div>
+                        <h4>Santri Raih Juara Lomba Tahfidz Tingkat Provinsi</h4>
+                        <p>Alhamdulillah, santri kami berhasil meraih juara 1 dalam lomba tahfidz Al-Qur'an tingkat provinsi yang diselenggarakan...</p>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-card-image">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <div class="news-card-content">
+                        <div class="news-date">15 November 2024</div>
+                        <h4>Renovasi dan Penambahan Fasilitas Pondok</h4>
+                        <p>Dalam rangka meningkatkan kualitas pendidikan, pondok pesantren telah menyelesaikan renovasi asrama dan penambahan...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pondok Pesantren Mansya'ul Huda</h3>
+                    <p>Lembaga pendidikan Islam yang berkomitmen membentuk generasi Qur'ani berakhlak mulia.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/mansyaul.huda.94" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mansyaulhuda.bwi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@ponpesmansyaulhuda3403?si=egzBQJXMfgBDNDTN" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/6285216991185" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Kawah Ijen Paspan Glagah Banyuwangi 68454</p>
+                        <p><i class="fas fa-phone"></i> 0852 1699 1185</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mansyaulhuda.bwi99@gmail.com" class="__cf_email__" data-cfemail="cca5a2aaa38ca1ada2adbfb5adb9a0a4b9a8ade2adafe2a5a8">mansyaulhuda.bwi99@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Link Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#profil">Profil Pondok</a></li>
+                        <li><a href="index.html#pendidikan">Program Pendidikan</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                        <li><a href="index.html#fasilitas">Fasilitas</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pondok Pesantren Mansya'ul Huda. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Share functionality
+            const pageUrl = encodeURIComponent(window.location.href);
+            const pageTitle = encodeURIComponent(document.querySelector('.article-content h1').textContent);
+
+            const whatsappLink = `https://api.whatsapp.com/send?text=${pageTitle}%20-%20Baca%20selengkapnya%20di:%20${pageUrl}`;
+            const whatsappButton = document.querySelector('.share-btn.whatsapp');
+            if (whatsappButton) {
+                whatsappButton.href = whatsappLink;
+            }
+
+            const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}&quote=${pageTitle}`;
+            const facebookButton = document.querySelector('.share-btn.facebook');
+            if (facebookButton) {
+                facebookButton.href = facebookLink;
+            }
+
+            const twitterLink = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+            const twitterButton = document.querySelector('.share-btn.twitter');
+            if (twitterButton) {
+                twitterButton.href = twitterLink;
+            }
+        });
+    </script>
+</body>
+</html>
