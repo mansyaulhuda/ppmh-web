@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SMK Alawiyah - Pondok Pesantren Mansya'ul Huda</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Styles adapted from mts-alawiyah.html for consistency */
+        .page-header {
+            background: linear-gradient(rgba(23, 66, 51, 0.7), rgba(52, 152, 219, 0.7)), url('banner/smk.jpg'); /* Ganti dengan banner SMK */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-meta {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .main-content {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px var(--shadow);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .article-content h1,
+        .article-content h2 {
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .article-content h1 {
+            font-size: 2.2rem;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            text-align: left;
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 0.5rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            color: var(--dark-gray);
+        }
+
+        .article-image-container {
+            margin: 1.5rem 0 2.5rem;
+            text-align: center;
+        }
+
+        .article-image-container img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px var(--shadow);
+        }
+
+        .article-image-container figcaption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-style: italic;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-green);
+            color: var(--dark-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .back-button:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        .vision-mission-list {
+            list-style: none;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .vision-mission-list li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .vision-mission-list li::before {
+            content: '\f138'; /* Font Awesome arrow-circle-right icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-green);
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        .major-section {
+            margin-top: 2rem;
+        }
+
+        .major-section h3 {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .map-container {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .map-container h2 {
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-align: center;
+            border-bottom: none;
+        }
+        .map-container iframe {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow);
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Header -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo-pondok.png" alt="Logo Mansya'ul Huda" class="logo-img">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <div class="nav-link dropdown">
+                    <span>Profil <i class="fas fa-caret-down"></i></span>
+                    <div class="dropdown-content">
+                        <a href="sejarah.html">Sejarah Berdirinya</a>
+                        <a href="profilpengasuh.html">Profil Pengasuh</a>
+                        <a href="profilpondok.html">Profil Pondok</a>
+                    </div>
+                </div>
+                <div class="nav-link dropdown">
+                    <span>Pendidikan <i class="fas fa-caret-down"></i></span>
+                    <div class="dropdown-content">
+                        <a href="mts-alawiyah.html">MTS SA-Alawiyah</a>
+                        <a href="smk-alawiyah.html">SMK Alawiyah</a>
+                    </div>
+                </div>
+                <a href="index.html#fasilitas" class="nav-link">Fasilitas</a>
+                <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+                <a href="index.html#kontak" class="nav-link">Kontak</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-container">
+            <h1 class="page-title">SMK Alawiyah</h1>
+            <div class="page-meta">
+                <i class="fas fa-tools"></i> Pendidikan Kejuruan Berbasis Pesantren
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="page-container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+            
+            <article class="article-content">
+                <h1>PROFIL SEKOLAH MENENGAH KEJURUAN (SMK) ALAWIYAH</h1>
+
+                <h2>Identitas & Sejarah</h2>
+                <p>SMK Alawiyah adalah sebuah lembaga pendidikan kejuruan swasta yang berlokasi di Jl. KH. Mahmud Ali, Desa Paspan, Kecamatan Glagah, Banyuwangi. Berdiri sejak tahun 2011, sekolah ini beroperasi di bawah naungan sebuah yayasan dan dipimpin oleh Kepala Sekolah Muhamad, S.pd. Secara legal, sekolah ini mendapatkan SK Pendirian pada 1 September 2014 dan SK Izin Operasional pada 8 Maret 2019.</p>
+
+                <h2>Visi & Misi</h2>
+                <p>Visi utama sekolah adalah <strong>"Terwujudnya Lulusan Yang Beriman Dan Bertakwa Serta Mampu Bersaing Di Dunia Kerja"</strong>. Visi ini diterjemahkan ke dalam dua misi utama:</p>
+                <ul class="vision-mission-list">
+                    <li>Melaksanakan kegiatan pendidikan yang berbasis pada model Pondok Pesantren untuk membentuk karakter spiritual siswa.</li>
+                    <li>Meningkatkan ketersediaan layanan pendidikan kejuruan untuk membekali siswa dengan keterampilan yang relevan.</li>
+                </ul>
+                <p>Pendekatan ini dikonfirmasi oleh sebuah studi yang meneliti bagaimana sekolah secara aktif membina karakter disiplin, kreatif, dan mandiri melalui kegiatan keagamaan dan non-keagamaan.</p>
+
+                <h2>Profil Akademik & Prestasi</h2>
+                <p>SMK Alawiyah telah mengadopsi Kurikulum Merdeka, yang memberikan fleksibilitas dalam merancang pembelajaran yang sesuai dengan kebutuhan siswa. Sejak awal berdiri, sekolah ini konsisten menawarkan tiga Kompetensi Keahlian. Sekolah ini terus berkomitmen untuk membina dan mengembangkan potensi setiap siswa, baik di bidang akademik maupun non-akademik, untuk mencetak lulusan yang siap bersaing dan berprestasi.</p>
+
+                <h2>Kompetensi Keahlian</h2>
+
+                <div class="major-section">
+                    <h3>Teknik Jaringan Komputer dan Telekomunikasi</h3>
+                    <figure class="article-image-container">
+                        <img src="galeri pendidikan/smk-tkj.jpg" alt="Dokumentasi Jurusan Teknik Jaringan">
+                        <figcaption>Praktik siswa di laboratorium Teknik Jaringan Komputer.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="major-section">
+                    <h3>Teknik Sepeda Motor</h3>
+                    <figure class="article-image-container">
+                        <img src="galeri pendidikan/smk-tsm.jpg" alt="Dokumentasi Jurusan Teknik Sepeda Motor">
+                        <figcaption>Siswa melakukan servis rutin di bengkel praktik Teknik Sepeda Motor.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="major-section">
+                    <h3>Tata Busana</h3>
+                    <figure class="article-image-container">
+                        <img src="galeri pendidikan/smk-tb.jpg" alt="Dokumentasi Jurusan Tata Busana">
+                        <figcaption>Hasil karya siswa jurusan Tata Busana dalam sebuah peragaan busana.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="map-container">
+                    <h2>Lokasi SMK Alawiyah</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.191131483095!2d114.3398867147805!3d-8.18329699411094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd15a48885c3531%3A0x80f63137e731558!2sSMK%20Al%20Alawiyah!5e0!3m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pondok Pesantren Mansya'ul Huda</h3>
+                    <p>Lembaga pendidikan Islam yang berkomitmen membentuk generasi Qur'ani berakhlak mulia.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/mansyaul.huda.94" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/mansyaulhuda.bwi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@ponpesmansyaulhuda3403?si=egzBQJXMfgBDNDTN" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/6285216991185" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. Kawah Ijen Paspan Glagah Banyuwangi 68454</p>
+                        <p><i class="fas fa-phone"></i> 0852 1699 1185</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:mansyaulhuda.bwi99@gmail.com">mansyaulhuda.bwi99@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#profil">Profil Pondok</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                        <li><a href="index.html#fasilitas">Fasilitas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pondok Pesantren Mansya'ul Huda. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
